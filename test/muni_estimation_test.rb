@@ -9,7 +9,7 @@ describe MuniEstimation do
 
     describe "Given a time difference of 4 minutes or less" do
       before do
-        @first = 11
+        @first = @second - 4
       end
 
       it "is worth it" do
@@ -19,7 +19,7 @@ describe MuniEstimation do
 
     describe "Given a time difference 5 minutes or greater" do
       before do
-        @first = 10
+        @first = @second - 5
       end
 
       it "is not worth it" do
