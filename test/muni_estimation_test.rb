@@ -53,4 +53,8 @@ describe MuniEstimation do
       end
     end
   end
+
+  it "should take predictions in string format" do
+    assert MuniEstimation.new("10", "12").worth_it?
+  end
 end

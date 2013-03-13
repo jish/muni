@@ -2,7 +2,7 @@ class MuniEstimation
   attr_reader :first, :second
 
   def initialize(first, second)
-    @first, @second = first, second
+    @first, @second = first.to_i, second.to_i
   end
 
   def worth_it?
