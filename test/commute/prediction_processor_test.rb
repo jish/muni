@@ -1,7 +1,7 @@
 require 'minitest/autorun'
-require 'muni_estimation'
+require 'commute/prediction_processor'
 
-describe MuniEstimation do
+describe Commute::PredictionProcessor do
   describe "Given a second estimation longer than 8 minutes away" do
     before do
       @second = 15
@@ -13,7 +13,7 @@ describe MuniEstimation do
       end
 
       it "is worth it" do
-        assert MuniEstimation.new(@first, @second).worth_it?
+        assert Commute::PredictionProcessor.new(@first, @second).worth_it?
       end
     end
 
@@ -23,7 +23,7 @@ describe MuniEstimation do
       end
 
       it "is not worth it" do
-        assert !MuniEstimation.new(@first, @second).worth_it?
+        assert !Commute::PredictionProcessor.new(@first, @second).worth_it?
       end
     end
   end
@@ -39,7 +39,7 @@ describe MuniEstimation do
       end
 
       it "is not worth it" do
-        assert !MuniEstimation.new(@first, @second).worth_it?
+        assert !Commute::PredictionProcessor.new(@first, @second).worth_it?
       end
     end
 
@@ -49,12 +49,12 @@ describe MuniEstimation do
       end
 
       it "is not worth it" do
-        assert !MuniEstimation.new(@first, @second).worth_it?
+        assert !Commute::PredictionProcessor.new(@first, @second).worth_it?
       end
     end
   end
 
   it "should take predictions in string format" do
-    assert MuniEstimation.new("10", "12").worth_it?
+    assert Commute::PredictionProcessor.new("10", "12").worth_it?
   end
 end
