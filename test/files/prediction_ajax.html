@@ -1,0 +1,207 @@
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="fr-CA" dir="ltr" charset=utf-8 xmlns= "http://www.w3.org/1999/xhtml">
+
+<head>
+
+
+
+<title>NextBus Stop Selector</title>
+<!-- Refresh the page every few seconds to update new prediction.  --> 
+<META HTTP-EQUIV="Refresh" CONTENT="20">
+<param="lang" value="en ">
+<link href="/css/predictor.css" rel="stylesheet" type="text/css" />
+
+
+</HEAD>
+<body class="whiteback" style="margin:0px"> 
+<table class="frameSelector">
+<tr><td>
+  
+
+
+
+
+
+
+
+
+
+  
+
+<table class="predictionTable" align="center">
+  
+
+    
+
+  
+    <tr> 
+      <td colspan="2" class="message">No Elevator at Church Station</td>
+    </tr>
+  
+  
+  <tr>
+    <td colspan="2" class="predictionLayerwhiteback"></td>
+  </tr>
+
+  <tr class="predictionLayerContent"> 
+    <td class="h2Notb center" colspan="2" height="30">
+    <nobr><span id='i18n_en'>Tracked vehicle</span>s <span id='i18n_en'>for</span> line N-Judah 
+    
+         <span id='i18n_en'>arriving in</span>:
+    
+    &nbsp;</nobr><br /></td>
+  </tr>
+  <tr  class="predictionLayerContent"> 
+    <td class="center" witdh="100%">
+      
+      <table  cellspacing="0" border="0" align="center">
+        
+        <tr> 
+          
+          <td class="predictionNumberForFirstPred"> 
+            <div class="right">&nbsp;2
+            </div>
+          </td>
+          <td align="left" class="predictionMinutes"><nobr>&nbsp;<span id='i18n_en'>minute</span>s
+          </nobr>
+          </td>
+          
+          <td align="left" style="vertical-align: bottom"> 
+            
+            
+
+            
+            
+          </td>
+        </tr>
+        
+        
+        
+        <tr> 
+          
+          <td class="predictionNumberForOtherPreds"> 
+            <div class="right">&nbsp;9
+            </div>
+          </td>
+          <td align="left" class="predictionMinutes"><nobr>&nbsp;<span id='i18n_en'>minute</span>s
+          </nobr>
+          </td>
+          
+          <td align="left" style="vertical-align: bottom"> 
+            
+            
+
+            
+            
+          </td>
+        </tr>
+        
+        
+        
+        <tr> 
+          
+          <td class="predictionNumberForOtherPreds"> 
+            <div class="right">&nbsp;18
+            </div>
+          </td>
+          <td align="left" class="predictionMinutes"><nobr>&nbsp;<span id='i18n_en'>minute</span>s
+          </nobr>
+          </td>
+          
+          <td align="left" style="vertical-align: bottom"> 
+            
+            
+
+            
+            
+          </td>
+        </tr>
+        
+        
+        
+      </table>
+      
+    </td>
+        <td class="stopIdInfo" width="4%"  >
+              
+      <img src="/images/blank.gif" width="1" height="5"> 
+      <div class="center">
+      <a href="#" onMouseOver="window.status='Click to learn how you can get real time information from any telephone';return true;" onMouseOut="window.status='';return true;" onClick="window.open('phoneSystemHelp511.jsp','HelpWindow','resizable,scrollbars,width=460,height=660'); return false;"> 
+        <img src="images/cellPhone.gif" hspace="2" border="0" width="57" height="39"><br/>
+        <p class="xsmall center">
+        
+        <nobr><span id='i18n_en'>Stop Number</span>: 17318</nobr><br/>
+        
+          <nobr><span id='i18n_en'>Phone</span>: 5-1-1</nobr><br/>
+          
+        
+            <nobr><span id='i18n_en'>SMS</span>: 41411 "nextmuni 17318"<nobr>
+     
+                
+         </a></div>
+   
+    </td>
+
+        
+        
+        
+  </tr>
+
+  
+
+  
+  <tr>
+    <td colspan="2" class="predictionLayerwhiteback" height="5px"></td>
+  </tr>
+          
+</table>
+<div class="center whiteback xsmall"><span id='i18n_en'>Valid as of</span> 8:52 AM Wednesday, March 13</div>
+
+
+<script>
+  // Set title of browser window with prediction so
+  // it shows up in tab of browser. This way user sees
+  // predictions even if they are viewing another tab.
+  // Catch exceptions because this page can be embedded
+  // in an agencies website, which means that can't have
+  // accesss to window.top for setting the title in Internet
+  // Explorer.
+  try {
+    window.top.document.title = 'NextBus:2 & 9min'
+  } catch (e) {
+    // Don't need to do anything here. Just need to make sure
+    // that don't get an error in IE.
+  }
+</script>
+
+
+
+
+</td></tr>
+<tr>
+<td>
+<p class="h2Notb center"><a href="prediction.shtml?a=sf-muni&r=N&d=N__IB1&s=7318&ts=4448" target=_top> 
+  <span id='i18n_en'>Go to page that can be bookmarked</span></a><a href="#" onMouseOver="window.status='Help on creating a bookmark for a stop';return true;"
+  onMouseOut="window.status='';return true;"
+  onClick="window.open('bookmarkHelp.jsp','HelpWindow','scrollbars,resizable,width=320,height=380');return false"> 
+  <img src="/predictor/images/questionMark.gif" width=20 height=20 border=0 alt="Help on creating a bookmark for a stop" align=absmiddle></a></p> 
+ </td>
+ </tr>
+ </table>
+</body>
+
+
+
+<script>
+// Reset parent's watchdog timer since the prediction was
+// just loaded.
+parent.window.predictionDisplayed();
+</script>
+      
