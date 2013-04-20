@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift('lib')
+
+require 'commute/driver'
+
+100.times do
+  Commute::Driver.new.call
+  sleep 30
+end
