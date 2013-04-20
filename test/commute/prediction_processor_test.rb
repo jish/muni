@@ -28,6 +28,23 @@ describe Commute::PredictionProcessor do
     end
   end
 
+  describe "Given a MINUTES_TO_MUNI time set by the user" do
+    before do
+      ENV['MINUTES_TO_MUNI'] = '10'
+    end
+
+    describe "Given a time difference of 4 minutes or less" do
+      before do
+        @second = 9
+        @first = @second - 4
+      end
+
+      it "is not worth it" do
+        assert !Commute::PredictionProcessor.new(@first, @second).worth_it?
+      end
+    end
+  end
+
   describe "Given a second estimation less than 8 minutes away" do
     before do
       @second = 7

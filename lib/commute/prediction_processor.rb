@@ -8,7 +8,12 @@ module Commute
 
     def worth_it?
       difference = second - first
-      second > 8 && difference < 5
+      second > minutes_to_muni && difference < 5
+    end
+
+    def minutes_to_muni
+      time = ENV['MINUTES_TO_MUNI'].to_i
+      time == 0 ? 8 : time
     end
   end
 end
