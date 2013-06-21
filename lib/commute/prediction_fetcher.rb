@@ -9,7 +9,13 @@ module Commute
 
     DIRECTIONS = { inbound: "N__IB1" }
 
-    STOPS = { duboce_park: "7318" }
+    STOPS = { 'duboce_park' => '7318', 'ninth_judah' => '5194' }
+
+    attr_reader :stop
+
+    def initialize(stop = nil)
+      @stop = stop if STOPS.keys.include?(stop)
+    end
 
     def call
       uri = URI.parse(BASE_URL)
@@ -23,9 +29,9 @@ module Commute
     def params
       route     = ROUTES[:n]
       direction = DIRECTIONS[:inbound]
-      stop      = STOPS[:duboce_park]
+      stop_id   = STOPS[self.stop || 'duboce_park']
 
-      { a: "sf-muni", r: route, d: direction, s: stop}
+      { a: "sf-muni", r: route, d: direction, s: stop_id }
     end
 
   end

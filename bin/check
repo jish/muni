@@ -4,7 +4,9 @@ $LOAD_PATH.unshift('lib')
 
 require 'commute/driver'
 
+stop = ARGV.shift
+
 100.times do
-  Commute::Driver.new.call
+  Commute::Driver.new(stop).call
   sleep 30
 end

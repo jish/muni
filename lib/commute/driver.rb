@@ -5,8 +5,14 @@ require 'commute/prediction_processor'
 module Commute
   class Driver
 
+    attr_reader :stop
+
+    def initialize(stop = nil)
+      @stop = stop
+    end
+
     def call
-      html = PredictionFetcher.new.call
+      html = PredictionFetcher.new(stop).call
       first, second, third = HtmlParser.new(html).times
 
       puts [first, second, third].join(", ")
