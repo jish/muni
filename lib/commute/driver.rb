@@ -1,5 +1,5 @@
 require 'commute/prediction_fetcher'
-require 'commute/html_parser'
+require 'commute/xml_parser'
 require 'commute/prediction_processor'
 
 module Commute
@@ -12,10 +12,10 @@ module Commute
     end
 
     def call
-      html = PredictionFetcher.new(stop).call
-      first, second, third = HtmlParser.new(html).times
+      data = PredictionFetcher.new(stop).times
+      first, second, third, fourth = XmlParser.new(data).times
 
-      puts [first, second, third].join(", ")
+      puts [first, second, third, fourth].join(", ")
 
       if PredictionProcessor.new(first, second).worth_it?
         puts "SECOND TRAIN #{second}"
@@ -25,6 +25,11 @@ module Commute
       if PredictionProcessor.new(second, third).worth_it?
         puts "THIRD TRAIN #{third}"
         system("say", "third", "train", "leaves", "in", third.to_s, "minutes")
+      end
+
+      if PredictionProcessor.new(third, fourth).worth_it?
+        puts "FOURTH TRAIN #{fourth}"
+        system("say", "fourth", "train", "leaves", "in", fourth.to_s, "minutes")
       end
     end
 
