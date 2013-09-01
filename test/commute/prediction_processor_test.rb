@@ -1,4 +1,4 @@
-require 'minitest/autorun'
+require 'helper'
 require 'commute/prediction_processor'
 
 describe Commute::PredictionProcessor do
