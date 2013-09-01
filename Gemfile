@@ -2,6 +2,7 @@
 source "https://rubygems.org"
 
 gem "tiny_http"
+gem "nokogiri"
 
 group :test do
   gem "webmock"
