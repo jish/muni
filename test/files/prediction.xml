@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<body copyright="All data copyright San Francisco Muni 2013.">
+<predictions agencyTitle="SF Muni" routeTitle="N-Judah" routeTag="N" stopTitle="Judah St &amp; 28th Ave" stopTag="5205">
+  <direction title="Outbound to Ocean Beach via Downtown">
+  <prediction epochTime="1378060340490" seconds="27" minutes="0" isDeparture="false" dirTag="N__OB1" vehicle="1550" block="9710" tripTag="5794434" />
+  <prediction epochTime="1378060455496" seconds="142" minutes="2" isDeparture="false" dirTag="N__OB1" vehicle="1490" block="9707" tripTag="5794426" />
+  <prediction epochTime="1378063523783" seconds="3210" minutes="53" isDeparture="false" affectedByLayover="true" dirTag="N__OB1" vehicle="1433" block="9703" tripTag="5794433" />
+  <prediction epochTime="1378065519391" seconds="5206" minutes="86" isDeparture="false" affectedByLayover="true" dirTag="N__OB1" vehicle="1480" block="9709" tripTag="5794439" />
+  </direction>
+<message text="N-Judah to/from Embarcadero only. For Caltrain, use bus shuttle."/>
+<message text="N predictions inaccurate near Embarcadero due to construction."/>
+</predictions>
+</body>
