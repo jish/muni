@@ -41,7 +41,7 @@ module Commute
     end
 
     def times
-      TinyHttp.new.get(XML_URL + build_query_string)
+      TinyHttp.new.get(XML_URL + build_query_string).body
     end
 
     def build_query_string
