@@ -13,23 +13,18 @@ module Commute
 
     def call
       data = PredictionFetcher.new(stop).xml
-      first, second, third, fourth = XmlParser.new(data).times
+      times = XmlParser.new(data).times
 
-      puts [first, second, third, fourth].join(", ")
+      puts times.join(", ")
 
-      if PredictionProcessor.new(first, second).worth_it?
-        puts "SECOND TRAIN #{second}"
-        system("say", "second", "train", "leaves", "in", second.to_s, "minutes")
-      end
+      times.first(times.length-1).each_with_index do |current_time, index|
+        next_time = times[index+1]
+        train_number = index + 2
 
-      if PredictionProcessor.new(second, third).worth_it?
-        puts "THIRD TRAIN #{third}"
-        system("say", "third", "train", "leaves", "in", third.to_s, "minutes")
-      end
-
-      if PredictionProcessor.new(third, fourth).worth_it?
-        puts "FOURTH TRAIN #{fourth}"
-        system("say", "fourth", "train", "leaves", "in", fourth.to_s, "minutes")
+        if PredictionProcessor.new(current_time, next_time).worth_it?
+          puts "TRAIN #{train_number} IN #{next_time}"
+          system("say", "train", train_number.to_s, "leaves", "in", next_time.to_s, "minutes")
+        end
       end
     end
 
