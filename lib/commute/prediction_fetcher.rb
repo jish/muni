@@ -43,7 +43,7 @@ module Commute
       STOPS[self.stop || 'duboce_park']
     end
 
-    def times
+    def xml
       url = XML_URL + build_query_string
       response = TinyHttp.new.get(url)
       response.body

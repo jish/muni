@@ -12,7 +12,7 @@ module Commute
     end
 
     def call
-      data = PredictionFetcher.new(stop).times
+      data = PredictionFetcher.new(stop).xml
       first, second, third, fourth = XmlParser.new(data).times
 
       puts [first, second, third, fourth].join(", ")
