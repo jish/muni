@@ -15,6 +15,12 @@ module Commute
       end
     end
 
+    def messages
+      document.css("message").map do |element|
+        element.attr("text")
+      end
+    end
+
     private
 
     def document

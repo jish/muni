@@ -12,10 +12,13 @@ module Commute
     end
 
     def call
-      data = PredictionFetcher.new(stop).xml
-      times = XmlParser.new(data).times
+      data        = PredictionFetcher.new(stop).xml
+      parsed_data = XmlParser.new(data)
+      times       = parsed_data.times
+      messages    = parsed_data.messages
 
       puts times.join(", ")
+      puts messages
 
       times.first(times.length-1).each_with_index do |current_time, index|
         next_time = times[index+1]
