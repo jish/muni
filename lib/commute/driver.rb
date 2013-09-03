@@ -1,5 +1,5 @@
 require 'commute/prediction_fetcher'
-require 'commute/html_parser'
+require 'commute/xml_parser'
 require 'commute/prediction_processor'
 
 module Commute
@@ -12,19 +12,22 @@ module Commute
     end
 
     def call
-      html = PredictionFetcher.new(stop).call
-      first, second, third = HtmlParser.new(html).times
+      data        = PredictionFetcher.new(stop).xml
+      parsed_data = XmlParser.new(data)
+      times       = parsed_data.times
+      messages    = parsed_data.messages
 
-      puts [first, second, third].join(", ")
+      puts times.join(", ")
+      puts messages
 
-      if PredictionProcessor.new(first, second).worth_it?
-        puts "SECOND TRAIN #{second}"
-        system("say", "second", "train", "leaves", "in", second.to_s, "minutes")
-      end
+      times.first(times.length-1).each_with_index do |current_time, index|
+        next_time = times[index+1]
+        train_number = index + 2
 
-      if PredictionProcessor.new(second, third).worth_it?
-        puts "THIRD TRAIN #{third}"
-        system("say", "third", "train", "leaves", "in", third.to_s, "minutes")
+        if PredictionProcessor.new(current_time, next_time).worth_it?
+          puts "TRAIN #{train_number} IN #{next_time}"
+          system("say", "train", train_number.to_s, "leaves", "in", next_time.to_s, "minutes")
+        end
       end
     end
 

@@ -1,15 +1,21 @@
 require 'net/http'
+require 'tiny_http'
 
 module Commute
   class PredictionFetcher
 
     BASE_URL = "http://www.nextmuni.com/predictor/fancyNewPredictionLayer.jsp"
+    XML_URL  = "http://webservices.nextbus.com/service/publicXMLFeed"
 
     ROUTES = { n: "N" }
 
     DIRECTIONS = { inbound: "N__IB1" }
 
-    STOPS = { 'duboce_park' => '7318', 'ninth_judah' => '5194' }
+    STOPS = {
+      'duboce_park' => '7318',
+      'ninth_judah' => '5194',
+      '12_judah'    => '5196'
+    }
 
     attr_reader :stop
 
@@ -29,9 +35,22 @@ module Commute
     def params
       route     = ROUTES[:n]
       direction = DIRECTIONS[:inbound]
-      stop_id   = STOPS[self.stop || 'duboce_park']
 
       { a: "sf-muni", r: route, d: direction, s: stop_id }
+    end
+
+    def stop_id
+      STOPS[self.stop || 'duboce_park']
+    end
+
+    def xml
+      url = XML_URL + build_query_string
+      response = TinyHttp.new.get(url)
+      response.body
+    end
+
+    def build_query_string
+      "?command=predictions&a=sf-muni&r=N&s=%s&useShortTitles=true" % [stop_id]
     end
 
   end
