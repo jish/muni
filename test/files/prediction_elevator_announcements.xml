@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<body copyright="All data copyright San Francisco Muni 2013.">
+<predictions agencyTitle="SF Muni" routeTitle="N-Judah" routeTag="N" stopTitle="Judah St &amp; 9th Ave" stopTag="5194">
+  <direction title="Inbound to Duboce &amp; Church">
+  <prediction epochTime="1379004306990" seconds="5356" minutes="89" isDeparture="false" affectedByLayover="true" dirTag="N__IB3" vehicle="1529" vehiclesInConsist="2" block="9714" tripTag="5792981" />
+  </direction>
+  <direction title="Inbound to Caltrain via Downtown">
+  <prediction epochTime="1378999506051" seconds="555" minutes="9" isDeparture="false" dirTag="N__IB1" vehicle="1482" vehiclesInConsist="2" block="9706" tripTag="5792779" />
+  <prediction epochTime="1379000365241" seconds="1415" minutes="23" isDeparture="false" affectedByLayover="true" dirTag="N__IB1" vehicle="1545" vehiclesInConsist="2" block="9707" tripTag="5792781" />
+  <prediction epochTime="1379000845241" seconds="1895" minutes="31" isDeparture="false" affectedByLayover="true" dirTag="N__IB1" vehicle="1410" vehiclesInConsist="2" block="9708" tripTag="5792782" />
+  <prediction epochTime="1379001265241" seconds="2315" minutes="38" isDeparture="false" affectedByLayover="true" dirTag="N__IB1" vehicle="1487" vehiclesInConsist="2" block="9709" tripTag="5792783" />
+  <prediction epochTime="1379001688544" seconds="2738" minutes="45" isDeparture="false" affectedByLayover="true" dirTag="N__IB1" vehicle="1517" vehiclesInConsist="2" block="9710" tripTag="5792784" />
+  </direction>
+<message text="Civic Center platform elevator out of service"/>
+<message text="Civic Center elevator out of service"/>
+<message text="No Elevator at&#10;Civic Center Sta."/>
+<message text="Civic Center platform elevator out of service"/>
+</predictions>
+</body>
