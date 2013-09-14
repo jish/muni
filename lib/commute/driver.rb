@@ -15,10 +15,10 @@ module Commute
       data        = PredictionFetcher.new(stop).xml
       parsed_data = XmlParser.new(data)
       times       = parsed_data.times
-      messages    = parsed_data.messages
+      messages    = parsed_data.filtered_messages
 
       puts times.join(", ")
-      puts messages
+      puts messages if messages.any?
 
       times.first(times.length-1).each_with_index do |current_time, index|
         next_time = times[index+1]

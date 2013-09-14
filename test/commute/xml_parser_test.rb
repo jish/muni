@@ -18,4 +18,19 @@ describe Commute::XmlParser do
     ]
   end
 
+  describe "Given an XML payload with multiple elevator announcements" do
+    let(:xml) { read_fixture_file("prediction_elevator_announcements.xml") }
+    subject { Commute::XmlParser.new(xml) }
+
+    describe "#filtered_messages" do
+      before do
+        @filtered_messages = subject.filtered_messages
+      end
+
+      it "filters out results with the word 'elevator'" do
+        @filtered_messages.must_equal []
+      end
+    end
+  end
+
 end

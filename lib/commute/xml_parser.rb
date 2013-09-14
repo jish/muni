@@ -21,6 +21,10 @@ module Commute
       end
     end
 
+    def filtered_messages
+      messages.select { |message| message !~ /elevator/i }
+    end
+
     private
 
     def document
