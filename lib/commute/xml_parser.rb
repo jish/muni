@@ -10,9 +10,11 @@ module Commute
     end
 
     def times
-      document.css("predictions prediction").map do |element|
+      times = document.css("predictions prediction").map do |element|
         element.attr("minutes").to_i
       end
+
+      times.sort
     end
 
     def messages

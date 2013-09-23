@@ -31,4 +31,13 @@ describe Commute::XmlParser do
     end
   end
 
+  describe "Given an XML payload with multiple types of trains" do
+    let(:xml) { read_fixture_file("prediction_multi.xml") }
+    subject { Commute::XmlParser.new(xml) }
+
+    it "orders the results" do
+      subject.times.must_equal [5, 12, 27, 34, 41, 84]
+    end
+  end
+
 end

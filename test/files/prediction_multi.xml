@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<body copyright="All data copyright San Francisco Muni 2013.">
+<predictions agencyTitle="SF Muni" routeTitle="N-Judah" routeTag="N" stopTitle="Judah St &amp; 9th Ave" stopTag="5194">
+  <direction title="Inbound to Duboce &amp; Church">
+  <prediction epochTime="1378313081360" seconds="5066" minutes="84" isDeparture="false" affectedByLayover="true" dirTag="N__IB3" vehicle="1483" vehiclesInConsist="2" block="9714" tripTag="5792981" />
+  </direction>
+  <direction title="Inbound to Caltrain via Downtown">
+  <prediction epochTime="1378308369640" seconds="355" minutes="5" isDeparture="false" dirTag="N__IB1" vehicle="1439" vehiclesInConsist="2" block="9706" tripTag="5792779" />
+  <prediction epochTime="1378308752291" seconds="737" minutes="12" isDeparture="false" dirTag="N__IB1" vehicle="1417" block="9717" tripTag="5792780" />
+  <prediction epochTime="1378309666351" seconds="1651" minutes="27" isDeparture="false" affectedByLayover="true" dirTag="N__IB1" vehicle="1507" vehiclesInConsist="2" block="9708" tripTag="5792782" />
+  <prediction epochTime="1378310086351" seconds="2071" minutes="34" isDeparture="false" affectedByLayover="true" dirTag="N__IB1" vehicle="1516" vehiclesInConsist="2" block="9709" tripTag="5792783" />
+  <prediction epochTime="1378310503989" seconds="2489" minutes="41" isDeparture="false" affectedByLayover="true" dirTag="N__IB1" vehicle="1487" vehiclesInConsist="2" block="9710" tripTag="5792784" />
+  </direction>
+</predictions>
+</body>
