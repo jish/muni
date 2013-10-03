@@ -9,12 +9,13 @@ module Commute
 
     ROUTES = { n: "N" }
 
-    DIRECTIONS = { inbound: "N__IB1" }
+    DIRECTIONS = { inbound: "N__IB1", outbound: "N__OB1" }
 
     STOPS = {
       'duboce_park' => '7318',
       'ninth_judah' => '5194',
-      '12_judah'    => '5196'
+      '12_judah'    => '5196',
+      'powell'      => '6995'
     }
 
     attr_reader :stop
