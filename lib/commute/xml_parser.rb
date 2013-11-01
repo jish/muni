@@ -24,7 +24,15 @@ module Commute
     end
 
     def filtered_messages
+      filter_noise(filter_marketing(messages))
+    end
+
+    def filter_noise(messages)
       messages.select { |message| message !~ /elevator/i }
+    end
+
+    def filter_marketing(messages)
+      messages.select { |message| message !~ /follow us on twitter/i }
     end
 
     private

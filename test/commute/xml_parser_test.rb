@@ -31,6 +31,18 @@ describe Commute::XmlParser do
     end
   end
 
+  describe "Given a list of messages with marketing information in them" do
+    let(:messages) { ["Follow us on Twitter", "An important announcement"]}
+    subject { Commute::XmlParser.new("") }
+
+    describe "Remove marketing messages" do
+      it "Ignores the marketing messages" do
+        filtered_messages = subject.filter_marketing(messages)
+        filtered_messages.must_equal ["An important announcement"]
+      end
+    end
+  end
+
   describe "Given an XML payload with multiple types of trains" do
     let(:xml) { read_fixture_file("prediction_multi.xml") }
     subject { Commute::XmlParser.new(xml) }
