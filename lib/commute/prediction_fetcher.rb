@@ -48,6 +48,8 @@ module Commute
       url = XML_URL + build_query_string
       response = TinyHttp.new.get(url)
       response.body
+    rescue Errno::ECONNRESET => e
+      warn "Error connection to API"
     end
 
     def build_query_string
