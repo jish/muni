@@ -32,7 +32,7 @@ module Commute
     end
 
     def filter_marketing(messages)
-      messages.select { |message| message !~ /follow us on twitter/i }
+      messages.select { |message| message !~ /follow us on twitter|sign.?up for/i }
     end
 
     private

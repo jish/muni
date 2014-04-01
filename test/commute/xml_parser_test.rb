@@ -32,7 +32,11 @@ describe Commute::XmlParser do
   end
 
   describe "Given a list of messages with marketing information in them" do
-    let(:messages) { ["Follow us on Twitter", "An important announcement"]}
+    let(:messages) { [
+      "Follow us on Twitter",
+      "An important announcement",
+      "Sign-up for Route/Line specific Email/Text Alerts @ sfmta.com"
+    ] }
     subject { Commute::XmlParser.new("") }
 
     describe "Remove marketing messages" do
