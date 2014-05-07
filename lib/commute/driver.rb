@@ -19,6 +19,7 @@ module Commute
 
       puts times.join(", ")
       puts messages if messages.any?
+      STDOUT.flush
 
       times.first(times.length-1).each_with_index do |current_time, index|
         next_time = times[index+1]
@@ -26,6 +27,7 @@ module Commute
 
         if PredictionProcessor.new(current_time, next_time).worth_it?
           puts "TRAIN #{train_number} IN #{next_time}"
+          STDOUT.flush
           system("say", "train", train_number.to_s, "leaves", "in", next_time.to_s, "minutes")
         end
       end
