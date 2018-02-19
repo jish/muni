@@ -7,6 +7,4 @@ gem "nokogiri"
 group :test do
   gem "webmock"
   gem "excon"
-  gem "guard"
-  gem "guard-minitest"
 end
