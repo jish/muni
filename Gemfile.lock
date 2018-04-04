@@ -5,7 +5,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
-    excon (0.60.0)
+    excon (0.62.0)
     hashdiff (0.3.7)
     mini_portile2 (2.3.0)
     nokogiri (1.8.2)
